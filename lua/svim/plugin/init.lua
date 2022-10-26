@@ -1,0 +1,8 @@
+require('svim.plugin.lsp')
+require('svim.plugin.nvim-treesitter')
+require('svim.plugin.lspsaga')
+require('svim.plugin.nvim-tree')
+require('svim.plugin.lualine')
+require('svim.plugin.barbar')
+require('svim.plugin.dashboard-nvim')
+require('svim.plugin.toggleterm')
