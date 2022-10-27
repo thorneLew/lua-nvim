@@ -101,7 +101,7 @@ return require('packer').startup(function (use)
 
 	-- 自动补全括号等
 	use {
-	"windwp/nvim-autopairs",
+		"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 	}
 
@@ -115,5 +115,20 @@ return require('packer').startup(function (use)
 	}
 	-- 注释
 	use 'tpope/vim-commentary'
+
+	-- 在每一上显示 特殊高亮 快速查找
+	use 'unblevable/quick-scope'
+
+	-- 剪切板快速展示
+	use 'junegunn/vim-peekaboo'
+
+	-- yank put 修改
+	-- Lua
+	use({
+		"gbprod/yanky.nvim",
+		config = function()
+			require("yanky").setup({})
+		end
+	})
 end)
 

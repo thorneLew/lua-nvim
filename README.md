@@ -131,3 +131,9 @@ return require('packer').startup(function (use)
 	use 'tpope/vim-commentary'
 end)
 ```
+
+
+
+### 快捷键
+
+* c-n 快速选中变量 , n 选中下一个 模式多个选择
