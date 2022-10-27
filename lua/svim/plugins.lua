@@ -104,5 +104,16 @@ return require('packer').startup(function (use)
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 	}
+
+	-- 快速选中 类似 vscode 的 c-d
+	-- https://github.com/mg979/vim-visual-multi/wiki/Quick-start
+	use 'mg979/vim-visual-multi'
+
+	-- 快速选中块
+	use {
+		'gcmt/wildfire.vim'
+	}
+	-- 注释
+	use 'tpope/vim-commentary'
 end)
 
