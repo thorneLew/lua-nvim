@@ -5,8 +5,18 @@ M.load_default_options = function ()
 		number = true, -- 设置行号
 		tabstop = 2,   -- tabs设置两个空格
 		shiftwidth = 2,
-		termguicolors=true
+		termguicolors=true,
+		-- 配置折叠
+		foldmethod="expr",
+		foldexpr="nvim_treesitter#foldexpr()",
+		foldenable=false,
+		foldlevel=99 -- 折叠的层
 	}
+	-- 无法自动启折叠功能临时解决方案 https://github.com/nvim-telescope/telescope.nvim/issues/699
+	vim.api.nvim_create_autocmd({ "BufEnter" }, {
+		pattern = { "*" },
+		command = "normal zx",
+	})
 
 	vim.cmd[[colorscheme tokyonight-night]]
 
@@ -16,7 +26,6 @@ M.load_default_options = function ()
 
 	-- 加载快捷键
 	require('svim.mapping')
-	
 
 	for k, v in pairs(default_options) do
 			vim.opt[k] = v

@@ -5,3 +5,4 @@ local map = vim.keymap.set
 map('n', '<leader>w', "<cmd>w<cr>", opt)
 map('i', 'jk', "<esc>", opt)
 map('n', '<leader>q', "<cmd>q<cr>", opt)
+map('n', '<leader><cr>', "<cmd>nohlsearch<cr>", opt)

@@ -6,7 +6,6 @@ return require('packer').startup(function (use)
 	-- 主题 东京之夜
 	use 'folke/tokyonight.nvim'
 
-
 	-- lsp 语言配置
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
@@ -15,7 +14,7 @@ return require('packer').startup(function (use)
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 	-- lsp server下载工具
-	use "williamboman/mason.nvim" 
+	use "williamboman/mason.nvim"
 	use  "williamboman/mason-lspconfig.nvim"
 
 	-- 语言解析，查询，模块
@@ -49,9 +48,61 @@ return require('packer').startup(function (use)
 	use {'glepnir/dashboard-nvim'}
 
 	-- 终端配置
-	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-  require("toggleterm").setup()
+	use {
+		"akinsho/toggleterm.nvim", tag = '*', config = function()
+			require("toggleterm").setup()
+		end}
 
-end}
+	-- 搜索工具
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+	-- git 
+	use {'lewis6991/gitsigns.nvim'}
+
+	-- 类似easymotion 快查找 vim插件
+	use {
+		'phaazon/hop.nvim',
+		event = "BufRead",
+		config = function ()
+			require('hop').setup { }
+			vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+			vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+		end
+	}
+
+	-- 轻松修改括号，引号等成对符号
+	use 'tpope/vim-surround'
+
+	-- 给相同变量展示下划线
+--	use {
+--		'echasnovski/mini.nvim',
+--		delay = 100,
+--		config = function ()
+--			require('mini.cursorword').setup()
+--		end
+--	}
+
+	-- markdown preview
+	use {
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		ft = "markdown",
+		config = function()
+			vim.g.mkdp_auto_start = 1
+		end
+	}
+
+	-- 协助lua 开发 提示文档
+	use "folke/neodev.nvim"
+
+	-- 自动补全括号等
+	use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+	}
 end)
 

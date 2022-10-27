@@ -3,8 +3,7 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 keymap('n', '<leader>bn', '<cmd>BufferNext<cr>', opt)
-keymap('n', '<leader>bb', '<cmd>BufferMovePrevious<cr>', opt)
-keymap('n', '<leader>bu', '<cmd>BufferMovePrevious<cr>', opt)
+keymap('n', '<leader>bb', '<cmd>BufferPrevious<cr>', opt)
 keymap('n', '<leader>bh', '<cmd>BufferCloseBuffersLeft<cr>', opt)
 keymap('n', '<leader>bl', '<cmd>BufferCloseBuffersRight<cr>', opt)
 keymap('n', '<leader>c', '<cmd>BufferClose<cr>', opt)

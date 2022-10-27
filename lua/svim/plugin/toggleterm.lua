@@ -3,9 +3,20 @@
 require'toggleterm'.setup {
   shade_terminals = false
 }
+local Terminal  = require('toggleterm.terminal').Terminal
+
+-- normal terminal
+local term = Terminal.new({
+  direction = "float"
+})
+
+function _term_toggle()
+  term.toggle()
+end
+
+-- vim.api.nvim_buf_set_keymap('n', '<C-t>', '<cmd>_term_toggle()<cr>', {noremap=true, silent=true})
 
 -- lazigit
-local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
   cmd = "lazygit",
   dir = "git_dir",
