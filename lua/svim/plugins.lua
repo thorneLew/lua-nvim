@@ -39,10 +39,11 @@ return require('packer').startup(function (use)
 	}
 
 	-- Tab
-	use {
-		'romgrk/barbar.nvim',
-		requires = {'kyazdani42/nvim-web-devicons'}
-	}
+	-- use {
+	-- 	'romgrk/barbar.nvim',
+	-- 	requires = {'kyazdani42/nvim-web-devicons'}
+	-- }
+	use "akinsho/bufferline.nvim"
 
 	-- 启动页 start screen
 	use {'glepnir/dashboard-nvim'}

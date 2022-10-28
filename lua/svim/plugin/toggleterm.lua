@@ -1,20 +1,29 @@
 -- https://github.com/akinsho/toggleterm.nvim
 
 require'toggleterm'.setup {
-  shade_terminals = false
+	size = 20,
+	open_mapping = [[<c-t>]],
+	hide_numbers = true,
+	shade_filetypes = {},
+	shade_terminals = true,
+	shading_factor = 2,
+	start_in_insert = true,
+	insert_mappings = true,
+	persist_size = true,
+	direction = "float",
+	close_on_exit = true,
+	shell = vim.o.shell,
+	float_opts = {
+		border = "curved",
+		winblend = 0,
+		highlights = {
+			border = "Normal",
+			background = "Normal",
+		},
+	},
 }
+
 local Terminal  = require('toggleterm.terminal').Terminal
-
--- normal terminal
-local term = Terminal.new({
-  direction = "float"
-})
-
-function _term_toggle()
-  term.toggle()
-end
-
--- vim.api.nvim_buf_set_keymap('n', '<C-t>', '<cmd>_term_toggle()<cr>', {noremap=true, silent=true})
 
 -- lazigit
 local lazygit = Terminal:new({
@@ -35,8 +44,8 @@ local lazygit = Terminal:new({
   end,
 })
 
-function _lazygit_toggle()
+function _LAZYGIT_TOGGLE()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
