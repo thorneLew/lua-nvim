@@ -128,5 +128,7 @@ return require('packer').startup(function (use)
 			require("yanky").setup({})
 		end
 	})
+	--翻译插件
+	use 'voldikss/vim-translator'
 end)
 

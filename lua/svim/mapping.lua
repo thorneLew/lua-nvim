@@ -10,4 +10,8 @@ map('n', '<C-l>', "<C-w>l", opt)
 map('n', '<C-h>', "<C-w>h", opt)
 map('n', '<C-j>', "<C-w>j", opt)
 map('n', '<C-k>', "<C-w>k", opt)
+
+map('v', 'Y', '"+y', opt)
+map('n', 'P', '"+p', opt)
+
 map('n', '<leader>bf', "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opt)
