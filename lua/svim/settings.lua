@@ -18,7 +18,6 @@ M.load_default_options = function ()
 		command = "normal zx",
 	})
 
-	require('svim.theme')
 	vim.g.mapleader = " "
 --  vim.g.maplocalleader = " "
 	vim.g.python3_host_prog = "/usr/bin/python3"
