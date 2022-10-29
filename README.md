@@ -1,12 +1,22 @@
 # neovim
 
 ### start
+
+1.下载配置
 ```
 cd ~/.config
-
 git clone https://github.com/thorneLew/lua-nvim.git nvim
 git clone git@github.com:thorneLew/lua-nvim.git nvim
 ```
+
+2.  安装packer (包管理器)
+- https://github.com/wbthomason/packer.nvim
+
+3. 安装依赖 - 确认所有插件都安装成功
+```
+nvim +PackerSync
+```
+4. 重启nvim
 
 
 ### plugins
@@ -15,27 +25,37 @@ git clone git@github.com:thorneLew/lua-nvim.git nvim
 return require('packer').startup(function (use)
 	-- Packer can manage itself
 	-- 插件管理器
-	use 'wbthomason/packer.nvim'
+			use 'wbthomason/packer.nvim'
 
 	-- 主题 东京之夜
 	use 'folke/tokyonight.nvim'
+	use {
+		"catppuccin/nvim",
+		as = "catppuccin"
+	}
 
 	-- lsp 语言配置
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+	-- 主要功能，支持代码提示
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+	-- 给nvim-cmp 增强 lsp 配置{source = {name="nvim_lsp"}}
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	-- 用lua编写的Snippet 引擎 
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+	-- 在nvim-cmp中可使用luasnip {source = {name="luasnip"}}
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'hrsh7th/cmp-nvim-lsp-signature-help' -- 增强参数提示 source form nvim-cmp
+
+	-- neovim lsp 变量跳转 有ui支持
+	use({"glepnir/lspsaga.nvim", branch = "main"})
 
 	-- lsp server下载工具
 	use "williamboman/mason.nvim"
 	use  "williamboman/mason-lspconfig.nvim"
 
 	-- 语言解析，查询，模块
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'  }
 
-	-- neovim lsp 变量跳转 有ui支持
-	use({"glepnir/lspsaga.nvim", branch = "main"})
 
 	-- 目录管理
 	use {
@@ -53,10 +73,7 @@ return require('packer').startup(function (use)
 	}
 
 	-- Tab
-	use {
-		'romgrk/barbar.nvim',
-		requires = {'kyazdani42/nvim-web-devicons'}
-	}
+	use "akinsho/bufferline.nvim"
 
 	-- 启动页 start screen
 	use {'glepnir/dashboard-nvim'}
@@ -91,15 +108,6 @@ return require('packer').startup(function (use)
 	-- 轻松修改括号，引号等成对符号
 	use 'tpope/vim-surround'
 
-	-- 给相同变量展示下划线
---	use {
---		'echasnovski/mini.nvim',
---		delay = 100,
---		config = function ()
---			require('mini.cursorword').setup()
---		end
---	}
-
 	-- markdown preview
 	use {
 		"iamcco/markdown-preview.nvim",
@@ -115,7 +123,7 @@ return require('packer').startup(function (use)
 
 	-- 自动补全括号等
 	use {
-	"windwp/nvim-autopairs",
+		"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 	}
 
@@ -129,7 +137,25 @@ return require('packer').startup(function (use)
 	}
 	-- 注释
 	use 'tpope/vim-commentary'
+
+	-- 在每一上显示 特殊高亮 快速查找
+	use 'unblevable/quick-scope'
+
+	-- 剪切板快速展示
+	use 'junegunn/vim-peekaboo'
+
+	-- yank put 修改
+	-- Lua
+	use({
+		"gbprod/yanky.nvim",
+		config = function()
+			require("yanky").setup({})
+		end
+	})
+	--翻译插件
+	use 'voldikss/vim-translator'
 end)
+
 ```
 
 
