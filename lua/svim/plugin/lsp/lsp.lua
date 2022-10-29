@@ -3,8 +3,8 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'pyright', 'tsserver' }
+-- -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+local servers = {'sumneko_lua', 'clangd', 'gopls','pyright', 'html', 'tsserver', 'cssls', 'eslint'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -12,10 +12,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- luasnip setup
+-- luasnip setup - snippet引擎
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
+-- 更多sources 配置 ： https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#lsp
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -53,10 +54,18 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+		{ name = 'nvim_lsp_signature_help'}
   },
 }
 
 
 --轻松管理 lsp server , dap server, linters and formatters 的插件 mason
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+			-- server
+			"sumneko_lua", "tsserver", "clangd", "cssls", "html", "pyright", "gopls",
+			-- lint
+			"eslint",
+		}
+})

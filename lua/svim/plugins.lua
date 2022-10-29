@@ -5,13 +5,22 @@ return require('packer').startup(function (use)
 
 	-- 主题 东京之夜
 	use 'folke/tokyonight.nvim'
+	use {
+		"catppuccin/nvim",
+		as = "catppuccin"
+	}
 
 	-- lsp 语言配置
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+	-- 主要功能，支持代码提示
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+	-- 给nvim-cmp 增强 lsp 配置{source = {name="nvim_lsp"}}
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	-- 用lua编写的Snippet 引擎 
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+	-- 在nvim-cmp中可使用luasnip {source = {name="luasnip"}}
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'hrsh7th/cmp-nvim-lsp-signature-help' -- 增强参数提示 source form nvim-cmp
 
 	-- neovim lsp 变量跳转 有ui支持
 	use({"glepnir/lspsaga.nvim", branch = "main"})
@@ -21,7 +30,7 @@ return require('packer').startup(function (use)
 	use  "williamboman/mason-lspconfig.nvim"
 
 	-- 语言解析，查询，模块
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'  }
 
 
 	-- 目录管理
@@ -74,15 +83,6 @@ return require('packer').startup(function (use)
 
 	-- 轻松修改括号，引号等成对符号
 	use 'tpope/vim-surround'
-
-	-- 给相同变量展示下划线
---	use {
---		'echasnovski/mini.nvim',
---		delay = 100,
---		config = function ()
---			require('mini.cursorword').setup()
---		end
---	}
 
 	-- markdown preview
 	use {
