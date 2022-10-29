@@ -11,3 +11,4 @@ require('svim.plugin.gitsigns') -- git 编辑其中提示
 require('svim.plugin.neodev') -- vim - lua 语法提示
 require('svim.plugin.bufferline') -- Tab功能
 require('svim.plugin.vim-translator') -- 翻译功能
+require('svim.plugin.dap') -- debuger 
