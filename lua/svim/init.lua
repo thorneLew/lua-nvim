@@ -1,3 +1,4 @@
+require('svim.env')
 --插件管理
 require('svim.plugins')
 

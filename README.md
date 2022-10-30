@@ -19,6 +19,17 @@ nvim +PackerSync
 4. 重启nvim
 
 
+5. cd lua/svim/
+创建env.lua文件。配置全局环境变量
+```lua
+-- default
+SELFENV = {
+	-- dap-vscode-js - debugger_path
+	dap_js_debugger_path = ''
+}
+
+```
+
 ### plugins
 
 ```lua
