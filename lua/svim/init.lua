@@ -1,4 +1,9 @@
-require('svim.env')
+-- globol env config
+local status_ok = pcall(require, "svim.env")
+if not status_ok then
+	SELFENV = require('svim.defulat_env')
+end
+
 --插件管理
 require('svim.plugins')
 
