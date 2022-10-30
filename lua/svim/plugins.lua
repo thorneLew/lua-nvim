@@ -138,6 +138,7 @@ return require('packer').startup(function(use)
 	-- dap - 调试 javascript -- start
 	-- https://github.com/mxsdev/nvim-dap-vscode-js
 	-- 需要手动安装vscode-js-debug -参考文档: Manually
-	use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }
+	use { "mxsdev/nvim-dap-vscode-js"}
 	-- dap - 调试 javascript -- end
+	use 'leoluz/nvim-dap-go'
 end)
