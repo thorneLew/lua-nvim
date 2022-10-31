@@ -2,7 +2,7 @@
   local db = require('dashboard')
 	local keymap = vim.keymap.set
 
-	keymap('n', '<C-i>', '<cmd>Dashboard<cr>', {})
+	keymap('n', '<C-h>', '<cmd>Dashboard<cr>', {})
 
   db.preview_command = 'cat | /opt/homebrew/bin/lolcat -F 0.3'
   db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
