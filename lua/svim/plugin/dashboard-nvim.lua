@@ -1,8 +1,9 @@
   local home = os.getenv('HOME')
   local db = require('dashboard')
-	local keymap = vim.keymap.set
+	-- local keymap = vim.keymap.set
 
-	keymap('n', '<C-h>', '<cmd>Dashboard<cr>', {})
+	-- 暂时删除吧，先不用
+	-- keymap('n', '<C-;>', '<cmd>Dashboard<cr>', {})
 
   db.preview_command = 'cat | /opt/homebrew/bin/lolcat -F 0.3'
   db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
