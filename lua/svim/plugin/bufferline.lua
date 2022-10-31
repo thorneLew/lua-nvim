@@ -12,6 +12,7 @@ bufferline.setup {
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+keymap('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', opts)
 keymap('n', '<leader>bn', '<cmd>BufferLineCycleNext<cr>', opts)
 keymap('n', '<leader>bb', '<cmd>BufferLineCyclePrev<cr>', opts)
 keymap('n', '<leader>bl', '<cmd>BufferLineCloseRight<cr>', opts)

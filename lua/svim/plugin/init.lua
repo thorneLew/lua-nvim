@@ -1,5 +1,6 @@
 require('svim.plugin.lsp.lsp') -- 提供了语法错误提示
 require('svim.plugin.lsp.lspsaga') -- 变量定义提示 gd 等
+require('svim.plugin.which-key') -- 快捷键提示  -- 暂时不用
 
 require('svim.plugin.nvim-treesitter') --语法高亮(官方说:更加明显)
 require('svim.plugin.nvim-tree') -- 文件管理器-目录结构

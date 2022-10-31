@@ -4,6 +4,13 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- require('which-key').register({
+--   f = {
+--     name = "file", -- optional group name
+--     f = { builtin.find_files, "Find File" }, -- create a binding with label
+--   },
+-- }, { prefix = "<leader>" })
+
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
 require('telescope').setup {

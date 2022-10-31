@@ -3,6 +3,9 @@ return require('packer').startup(function(use)
 	-- 插件管理器
 	use 'wbthomason/packer.nvim'
 
+	-- which-key - 快捷键提示 感觉用不上
+	-- use 'folke/which-key.nvim'
+
 	-- 主题 东京之夜
 	use 'folke/tokyonight.nvim'
 	use {

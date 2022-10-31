@@ -31,8 +31,8 @@
 		{
 			icon = '  ',
 			desc ='File Browser                            ',
-			action =  'Telescope file_browser',
-			shortcut = 'SPC f b'
+			action =  'NvimTreeToggle',
+			shortcut = 'SPC e'
 		},
 		-- {
 		-- 	icon = '  ',

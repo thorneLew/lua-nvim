@@ -8,7 +8,7 @@ require('dap.ext.vscode').load_launchjs(nil, {})
 local opts = {}
 keymap('n', '<leader>bg', '<cmd>DapToggleBreakpoint<cr>', opts)
 keymap('n', '<leader>bc', '<cmd>DapContinue<cr>', opts)
-keymap('n', '<leader>bh', '<Cmd>lua require("dapui").eval(nil, {enter=true})<CR>', opts)
+keymap('n', '<leader>be', '<Cmd>lua require("dapui").eval(nil, {enter=true})<CR>', opts)
 
 -- dap-ui 配置
 local dap, dapui = require("dap"), require("dapui")
