@@ -1,3 +1,4 @@
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "html", "javascript", "json", "typescript" },
@@ -40,3 +41,15 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
  },
 }
+
+vim.filetype.add({
+	extension={
+		handlebars = "handlebars"
+	}
+})
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+
+ft_to_parser["handlebars"] = "typescript"
+
+
