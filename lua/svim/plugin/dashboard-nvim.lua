@@ -1,9 +1,5 @@
   local home = os.getenv('HOME')
   local db = require('dashboard')
-	-- local keymap = vim.keymap.set
-
-	-- 暂时删除吧，先不用
-	-- keymap('n', '<C-;>', '<cmd>Dashboard<cr>', {})
 
   db.preview_command = 'cat | /opt/homebrew/bin/lolcat -F 0.3'
   db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
@@ -11,12 +7,6 @@
   db.preview_file_width = 90
 
 	db.custom_center = {
-		-- {
-		-- 	icon = '  ',
-		-- 	desc = 'Recently latest session                  ',
-		-- 	shortcut = 'SPC s l',
-		-- 	action ='SessionLoad'
-		-- },
 		{
 			icon = '  ',
 			desc = 'Recently opened files                   ',
@@ -35,16 +25,4 @@
 			action =  'NvimTreeToggle',
 			shortcut = 'SPC e'
 		},
-		-- {
-		-- 	icon = '  ',
-		-- 	desc = 'Find  word                              ',
-		-- 	action = 'Telescope live_grep',
-		-- 	shortcut = 'SPC f w'
-		-- },
-		-- {
-		-- 	icon = '  ',
-		-- 	desc = 'Open Personal dotfiles                  ',
-		-- 	action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
-		-- 	shortcut = 'SPC f d'
-		-- },
 	}
