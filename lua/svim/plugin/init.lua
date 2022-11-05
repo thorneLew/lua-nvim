@@ -5,3 +5,4 @@ require('svim.plugin.dap') -- debuger
 require('svim.plugin.coc') -- coc 
 require('svim.plugin.vim-airline') -- 状态栏和Tabline
 require('svim.plugin.toggleterm') -- 终端 
+require('svim.plugin.nvim-treesitter') --语法高亮(官方说:更加明显)

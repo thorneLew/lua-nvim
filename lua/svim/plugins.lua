@@ -76,6 +76,7 @@ return require('packer').startup(function(use)
 	--翻译插件
 	use 'voldikss/vim-translator'
 	-- debuger
+	use {'nvim-treesitter/nvim-treesitter'}
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
 	use 'theHamsta/nvim-dap-virtual-text'
