@@ -12,12 +12,8 @@ return require('packer').startup(function(use)
 	-- coc
 	use {'neoclide/coc.nvim', branch = 'release'}
 
-	-- Tab
-	-- use "akinsho/bufferline.nvim"
-
 	-- 状态栏和Tab切换
 	use "vim-airline/vim-airline"
-	-- use "vim-airline/vim-airline-themes"
 
 	-- 搜索工具
 	use {
