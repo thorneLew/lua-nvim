@@ -4,10 +4,13 @@ vim.g.coc_global_extensions = {
 	"coc-json",
 	"coc-html",
 	"coc-css",
+	"coc-go",
+
+	-- plugins
 	"coc-explorer", -- 资源管理器
 	"coc-git", -- git
 	"coc-pairs", -- auto pair
-	"coc-snippets"
+	"coc-snippets" -- 代码片段
 }
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
