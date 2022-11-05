@@ -48,12 +48,8 @@ return require('packer').startup(function(use)
 	-- coc
 	use {'neoclide/coc.nvim', branch = 'release'}
 
-	-- Tab
-	-- use "akinsho/bufferline.nvim"
-
 	-- 状态栏和Tab切换
 	use "vim-airline/vim-airline"
-	-- use "vim-airline/vim-airline-themes"
 
 	-- 搜索工具
 	use {
@@ -116,6 +112,7 @@ return require('packer').startup(function(use)
 	--翻译插件
 	use 'voldikss/vim-translator'
 	-- debuger
+	use {'nvim-treesitter/nvim-treesitter'}
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
 	use 'theHamsta/nvim-dap-virtual-text'
