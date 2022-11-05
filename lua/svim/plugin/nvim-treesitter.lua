@@ -10,6 +10,14 @@ require'nvim-treesitter.configs'.setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
 
+	-- windwp/nvim-ts-autotag
+	autotag = {
+    enable = true
+  },
+	-- JoosepAlviste/nvim-ts-context-commentstring
+	context_commentstring = {
+    enable = true
+  },
   -- List of parsers to ignore installing (for "all")
   -- ignore_install = { "javascript" },
 

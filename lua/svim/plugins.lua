@@ -8,14 +8,11 @@ return require('packer').startup(function(use)
 
 	-- 主题 东京之夜
 	use 'folke/tokyonight.nvim'
-	use {
-		"catppuccin/nvim",
-		as = "catppuccin"
-	}
+	use 'shaunsingh/moonlight.nvim'
 
 	-- lsp 语言配置
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-	-- 主要功能，支持代码提示
+	-- 自动安装插件 
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
 	-- 给nvim-cmp 增强 lsp 配置{source = {name="nvim_lsp"}}
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -28,13 +25,16 @@ return require('packer').startup(function(use)
 	-- neovim lsp 变量跳转 有ui支持
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 
-	-- lsp server下载工具
+	-- [lsp server ，Dap server , lint server ] 管理下载工具
+	-- Command : Mason , MasonInstall
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 
 	-- 语言解析，查询，模块
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
+	use {'windwp/nvim-ts-autotag'} -- 自动闭合html等标签
+	use 'tpope/vim-commentary' -- 注释功能
+	use 'JoosepAlviste/nvim-ts-context-commentstring'-- 注释支持 jsx
 
 	-- 目录管理
 	use {
@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- git
 	use { 'lewis6991/gitsigns.nvim' }
@@ -115,8 +115,6 @@ return require('packer').startup(function(use)
 	use {
 		'gcmt/wildfire.vim'
 	}
-	-- 注释
-	use 'tpope/vim-commentary'
 
 	-- 在每一上显示 特殊高亮 快速查找
 	use 'unblevable/quick-scope'

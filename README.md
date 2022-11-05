@@ -100,7 +100,7 @@ return require('packer').startup(function (use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'arch -x86_64 make' }
 
 	-- git 
 	use {'lewis6991/gitsigns.nvim'}
@@ -174,3 +174,8 @@ end)
 ### 快捷键
 
 * c-n 快速选中变量 , n 选中下一个 模式多个选择
+
+
+### 常见问题
+
+1.  nvim-telescope/telescope-fzf-native.nvim 在M1 需要编译 arch -x86_64 make
