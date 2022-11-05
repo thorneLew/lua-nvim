@@ -5,6 +5,7 @@ vim.g.coc_global_extensions = {
 	"coc-html",
 	"coc-css",
 	"coc-explorer", -- 资源管理器
+	"coc-git", -- git
 }
 
 local keyset = vim.keymap.set

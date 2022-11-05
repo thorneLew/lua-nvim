@@ -32,9 +32,6 @@ return require('packer').startup(function(use)
 			require("toggleterm").setup()
 		end}
 
-	-- git
-	use { 'lewis6991/gitsigns.nvim' }
-
 	-- 类似easymotion 快查找 vim插件
 	use {
 		'phaazon/hop.nvim',
