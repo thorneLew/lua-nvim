@@ -58,6 +58,11 @@ return require('packer').startup(function(use)
 	-- use { 'glepnir/dashboard-nvim' }
 	use {'goolord/alpha-nvim'}
 
+
+	-- DB  connect mysql, MongoDB, SQLite 先隐藏，暂时不用
+	-- use 'tpope/vim-dadbod'
+	-- use 'kristijanhusak/vim-dadbod-ui'
+
 	-- 终端配置
 	use {
 		"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -131,6 +136,7 @@ return require('packer').startup(function(use)
 			require("yanky").setup({})
 		end
 	})
+
 	--翻译插件
 	use 'voldikss/vim-translator'
 	-- debuger
