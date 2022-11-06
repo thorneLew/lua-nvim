@@ -55,7 +55,8 @@ return require('packer').startup(function(use)
 	use "akinsho/bufferline.nvim"
 
 	-- 启动页 start screen
-	use { 'glepnir/dashboard-nvim' }
+	-- use { 'glepnir/dashboard-nvim' }
+	use {'goolord/alpha-nvim'}
 
 	-- 终端配置
 	use {
