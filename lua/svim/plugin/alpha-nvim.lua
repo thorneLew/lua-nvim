@@ -194,3 +194,5 @@ local config = {
     },
 }
 require'alpha'.setup(config)
+
+vim.keymap.set('n', '<leader>;', '<cmd>Alpha<Cr>', {})
