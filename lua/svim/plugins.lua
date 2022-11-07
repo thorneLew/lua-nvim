@@ -25,6 +25,12 @@ return require('packer').startup(function(use)
 	-- neovim lsp 变量跳转 有ui支持
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 
+	-- 以来lsp 做注入诊断，代码操作
+	use {
+		'jose-elias-alvarez/null-ls.nvim',
+		 requires = { "nvim-lua/plenary.nvim" }
+	 }
+
 	-- [lsp server ，Dap server , lint server ] 管理下载工具
 	-- Command : Mason , MasonInstall
 	use "williamboman/mason.nvim"
