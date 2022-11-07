@@ -177,5 +177,6 @@ end)
 
 
 ### 常见问题
-
 1.  nvim-telescope/telescope-fzf-native.nvim 在M1 需要编译 arch -x86_64 make
+2.  null-ls 需要 neovim - v0.8.0-1210-gd367ed9b2
+
