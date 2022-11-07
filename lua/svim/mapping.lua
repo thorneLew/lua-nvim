@@ -17,4 +17,4 @@ map('v', 'Y', '"+y', opt)
 map('n', 'P', '"+p', opt)
 map('n', '<leader>lc', '<Cmd>e'.. NVIMHOME .. '/lua/svim/init.lua' .. '<Cr>', opt)
 
-map('n', '<leader>bf', "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opt)
+map('n', '<leader>bf', "<cmd>lua vim.lsp.buf.format()<cr>", opt)
