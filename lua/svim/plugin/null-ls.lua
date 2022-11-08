@@ -37,6 +37,7 @@ null_ls.setup({
 	debug = true,
 	sources = {
 		formatting.stylua,
+		formatting.prettier,
 		diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},
