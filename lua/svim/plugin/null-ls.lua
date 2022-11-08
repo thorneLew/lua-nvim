@@ -29,11 +29,16 @@ local on_attach = function(client, bufnr)
 		})
 	end
 end
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 null_ls.setup({
+	debug = true,
 	sources = {
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.diagnostics.golangci_lint,
+		formatting.stylua,
+		diagnostics.eslint,
+		diagnostics.golangci_lint,
 	},
 	on_attach = on_attach,
 })
