@@ -202,6 +202,12 @@ sources = {
 		diagnostics.golangci_lint,
 },
 ```
+#### 需要安装的插件
+1. npm i -g prettier
+2. npm i -g eslint 
+3. npm i -g fixjson
+4. yay -Syy golangci_lint
+5. yay -Syy stylua
 
 
 ### 快捷键
