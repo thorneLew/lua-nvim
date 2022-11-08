@@ -2,6 +2,7 @@ local status_ok, null_ls = pcall(require, "null-ls")
 if not status_ok then
 	return
 end
+-- local log = require("null-ls.logger")
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
@@ -18,6 +19,11 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- add to your shared on_attach callback
 local on_attach = function(client, bufnr)
+	local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+	if filetype == "handlebars" then
+		return
+	end
+
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
@@ -34,7 +40,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = true,
+	debug = false,
 	sources = {
 		formatting.stylua,
 		formatting.prettier,
