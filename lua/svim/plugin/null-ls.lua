@@ -38,6 +38,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.prettier,
+		formatting.fixjson,
 		diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},

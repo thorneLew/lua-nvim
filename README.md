@@ -192,6 +192,16 @@ return require('packer').startup(function(use)
 end)
 ```
 
+### null-ls支持
+```lua
+sources = {
+		formatting.stylua,
+		formatting.prettier,
+		formatting.fixjson,
+		diagnostics.eslint,
+		diagnostics.golangci_lint,
+},
+```
 
 
 ### 快捷键
