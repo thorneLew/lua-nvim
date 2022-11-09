@@ -45,6 +45,8 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.prettier,
 		formatting.fixjson,
+		formatting.gofumpt,
+		formatting.goimports,
 		diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},
