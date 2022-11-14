@@ -20,6 +20,6 @@ map("n", "<leader>lc", "<Cmd>e" .. NVIMHOME .. "/lua/svim/init.lua" .. "<Cr>", o
 map("n", "<leader>bf", "<cmd>lua vim.lsp.buf.format()<cr>", opt)
 
 -- git
-map("n", "<leader>gl", "<Cmd>DiffviewFileHistory<cr>", opt)
+map("n", "<leader>gl", "<Cmd>DiffviewFileHistory<cr>", opt) -- 查看历史
 map("n", "<leader>ge", "<Cmd>DiffviewOpen<cr>", opt) -- 查看当前修改
-map("n", "<leader>gc", "<Cmd>DiffviewClose<cr>", opt)
+map("n", "<leader>gc", "<Cmd>DiffviewClose<cr>", opt) -- 关闭 diffview
