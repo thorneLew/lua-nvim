@@ -1,6 +1,6 @@
 -- https://github.com/akinsho/toggleterm.nvim
 
-require'toggleterm'.setup {
+require("toggleterm").setup({
 	size = 20,
 	open_mapping = [[<c-t>]],
 	hide_numbers = true,
@@ -21,31 +21,29 @@ require'toggleterm'.setup {
 			background = "Normal",
 		},
 	},
-}
+})
 
-local Terminal  = require('toggleterm.terminal').Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 
 -- lazigit
 local lazygit = Terminal:new({
-  cmd = "lazygit",
-  dir = "git_dir",
-  direction = "float",
-  float_opts = {
-    border = "double",
-  },
-  -- function to run on opening the terminal
-  on_open = function(term)
-    vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
-  end,
-  -- function to run on closing the terminal
-  on_close = function()
-    vim.cmd("startinsert!")
-  end,
+	cmd = "lazygit",
+	dir = "git_dir",
+	direction = "float",
+	float_opts = {
+		border = "double",
+	},
+	-- function to run on opening the terminal
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+	end,
+	-- function to run on closing the terminal
+	on_close = function()
+		vim.cmd("startinsert!")
+	end,
 })
 
 function _LAZYGIT_TOGGLE()
-  lazygit:toggle()
+	lazygit:toggle()
 end
-
-vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})

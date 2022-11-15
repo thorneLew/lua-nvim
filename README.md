@@ -3,24 +3,28 @@
 ### start
 
 1.下载配置
+
 ```
 cd ~/.config
 git clone https://github.com/thorneLew/lua-nvim.git nvim
 git clone git@github.com:thorneLew/lua-nvim.git nvim
 ```
 
-2.  安装packer (包管理器)
+2.  安装 packer (包管理器)
+
 - https://github.com/wbthomason/packer.nvim
 
 3. 安装依赖 - 确认所有插件都安装成功
+
 ```
 nvim +PackerSync
 ```
-4. 重启nvim
 
+4. 重启 nvim
 
 5. cd lua/svim/
-创建env.lua文件。配置全局环境变量
+   创建 env.lua 文件。配置全局环境变量
+
 ```lua
 -- default
 SELFENV = {
@@ -47,7 +51,7 @@ return require('packer').startup(function(use)
 
 	-- lsp 语言配置
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-	-- 自动安装插件 
+	-- 自动安装插件
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
 	-- 给nvim-cmp 增强 lsp 配置{source = {name="nvim_lsp"}}
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -192,7 +196,8 @@ return require('packer').startup(function(use)
 end)
 ```
 
-### null-ls支持
+### null-ls 支持
+
 ```lua
 sources = {
 		formatting.stylua,
@@ -202,20 +207,22 @@ sources = {
 		diagnostics.golangci_lint,
 },
 ```
+
 #### 需要安装的插件
+
 1. npm i -g prettier
-2. npm i -g eslint 
+2. npm i -g eslint
 3. npm i -g fixjson
 4. yay -Syy golangci_lint
 5. yay -Syy stylua
 
-
 ### 快捷键
 
-* c-n 快速选中变量 , n 选中下一个 模式多个选择
+> 查看 lua/svim/mapping.lua
 
+- c-n 快速选中变量 , n 选中下一个 模式多个选择
 
 ### 常见问题
-1.  nvim-telescope/telescope-fzf-native.nvim 在M1 需要编译 arch -x86_64 make
-2.  null-ls 需要 neovim - v0.8.0-1210-gd367ed9b2
 
+1.  nvim-telescope/telescope-fzf-native.nvim 在 M1 需要编译 arch -x86_64 make
+2.  null-ls 需要 neovim - v0.8.0-1210-gd367ed9b2
