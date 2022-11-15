@@ -14,6 +14,7 @@ map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<leader>w", "<cmd>w<cr>", opt)
 map("n", "<leader>q", "<cmd>q<cr>", opt)
+map("n", "<leader>c", "<cmd>bdelete<cr>", opt) -- 关闭当前标签
 map("n", "<leader><cr>", "<cmd>nohlsearch<cr>", opt)
 map("n", "<leader>lc", "<Cmd>e" .. NVIMHOME .. "/lua/svim/init.lua" .. "<Cr>", opt)
 
@@ -30,12 +31,26 @@ map("n", "<leader>bb", "<cmd>BufferLineCyclePrev<cr>", opt)
 map("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", opt)
 map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", opt)
 map("n", "<leader>bj", "<cmd>BufferLinePick<cr>", opt)
-map("n", "<leader>c", "<cmd>bdelete<cr>", opt)
 
 -- git
 map("n", "<leader>gl", "<Cmd>DiffviewFileHistory<cr>", opt) -- 查看历史
 map("n", "<leader>ge", "<Cmd>DiffviewOpen<cr>", opt) -- 查看当前修改
 map("n", "<leader>gc", "<Cmd>DiffviewClose<cr>", opt) -- 关闭 diffview
+
+--lsp/lspsaga 查找变量的定义
+-- lsp 查找对应变量
+map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+-- Code action
+map({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- Rename
+map("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+-- Peek Definition
+-- 可以弹出变量所在文件内容，并支持编辑
+map("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+-- Outline - 大纲
+map("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+-- Hover Doc
+map("n", "gh", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- nvim-tree 文件管理器
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", {})
@@ -53,21 +68,6 @@ nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opt)
 --vim-translator 翻译
 map("n", "<leader>t", "<cmd>TranslateW<cr>", {})
 map("v", "<leader>t", ":TranslateW<cr>", {})
-
---lsp/lspsaga 查找变量的定义
--- lsp 查找对应变量
-map("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
--- Code action
-map({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>", { silent = true })
--- Rename
-map("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
--- Peek Definition
--- 可以弹出变量所在文件内容，并支持编辑
-map("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
--- Outline - 大纲
-map("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
--- Hover Doc
-map("n", "gh", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 --nvim-dap 断点工具
 map("n", "<leader>bg", "<cmd>DapToggleBreakpoint<cr>", {})
