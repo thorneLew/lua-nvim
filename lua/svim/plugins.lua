@@ -9,6 +9,8 @@ return require("packer").startup(function(use)
 	-- 主题 东京之夜
 	use("folke/tokyonight.nvim")
 	use("shaunsingh/moonlight.nvim")
+	--根据16进制高亮颜色
+	use("norcalli/nvim-colorizer.lua")
 
 	-- lsp 语言配置
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
