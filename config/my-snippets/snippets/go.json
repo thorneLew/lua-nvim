@@ -12,5 +12,19 @@
       "// @Router       /accounts/{id} [get]"
     ],
     "description": "swagger of go"
+  },
+  "swaggerpost": {
+    "prefix": "swaggerpost",
+    "body": [
+      "// @Summary      Create Project",
+      "// @Description  create Proejct",
+      "// @Tags         accounts",
+      "// @Accept       json",
+      "// @Produce      json",
+      "// @Param        json  body  requests.Project       true \"project\"",
+      "// @Success      200  {object}  model.Account",
+      "// @Router       /project/create [post]"
+    ],
+    "description": "swagger  post body"
   }
 }
