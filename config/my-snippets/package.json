@@ -10,6 +10,12 @@
           "html"
         ],
         "path": "./snippets/html.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./snippets/go.json"
       }
     ]
   }

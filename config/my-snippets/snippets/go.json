@@ -1,0 +1,16 @@
+{
+  "swagger": {
+    "prefix": "swagger",
+    "body": [
+      "// @Summary      Show an account",
+      "// @Description  Description",
+      "// @Tags         accounts",
+      "// @Accept       json",
+      "// @Produce      json",
+      "// @Param        id   path      int  false  \"Account ID\"",
+      "// @Success      200  {object}  model.Account",
+      "// @Router       /accounts/{id} [get]"
+    ],
+    "description": "swagger of go"
+  }
+}
