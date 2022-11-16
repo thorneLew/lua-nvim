@@ -46,6 +46,14 @@ return require("packer").startup(function(use)
 	use("tpope/vim-commentary") -- 注释功能
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- 注释支持 jsx
 
+	-- 给不同编程语言生成函数注释 js -> jsDoc go -> goDoc 等等
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+	})
+
 	-- 目录管理
 	use({
 		"nvim-tree/nvim-tree.lua",
@@ -98,8 +106,8 @@ return require("packer").startup(function(use)
 		event = "BufRead",
 		config = function()
 			require("hop").setup({})
-			vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-			vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+			vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", { silent = true })
+			vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
 		end,
 	})
 
