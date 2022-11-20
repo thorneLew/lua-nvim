@@ -3,12 +3,8 @@ return require("packer").startup(function(use)
 	-- 插件管理器
 	use("wbthomason/packer.nvim")
 
-	-- which-key - 快捷键提示 感觉用不上
-	-- use 'folke/which-key.nvim'
-
 	-- 主题 东京之夜
 	use("folke/tokyonight.nvim")
-	use("shaunsingh/moonlight.nvim")
 	--根据16进制高亮颜色
 	use("norcalli/nvim-colorizer.lua")
 
@@ -75,10 +71,6 @@ return require("packer").startup(function(use)
 	-- 启动页 start screen
 	use({ "goolord/alpha-nvim" })
 
-	-- DB  connect mysql, MongoDB, SQLite 先隐藏，暂时不用
-	-- use 'tpope/vim-dadbod'
-	-- use 'kristijanhusak/vim-dadbod-ui'
-
 	-- 终端配置
 	use({
 		"akinsho/toggleterm.nvim",
@@ -100,16 +92,8 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "sindrets/diffview.nvim" })
 
-	-- 类似easymotion 快查找 vim插件
-	use({
-		"phaazon/hop.nvim",
-		event = "BufRead",
-		config = function()
-			require("hop").setup({})
-			vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", { silent = true })
-			vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
-		end,
-	})
+	-- sneap 快速跳转
+	use("ggandor/leap.nvim")
 
 	-- 轻松修改括号，引号等成对符号
 	use("tpope/vim-surround")
@@ -144,14 +128,10 @@ return require("packer").startup(function(use)
 		"gcmt/wildfire.vim",
 	})
 
-	-- 在每一上显示 特殊高亮 快速查找
-	use("unblevable/quick-scope")
-
 	-- 剪切板快速展示
 	use("junegunn/vim-peekaboo")
 
 	-- yank put 修改
-	-- Lua
 	use({
 		"gbprod/yanky.nvim",
 		config = function()

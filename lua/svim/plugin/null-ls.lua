@@ -47,6 +47,7 @@ null_ls.setup({
 		formatting.fixjson,
 		formatting.gofumpt,
 		formatting.goimports,
+		formatting.clang_format,
 		diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},

@@ -73,8 +73,3 @@ map("v", "<leader>t", ":TranslateW<cr>", {})
 map("n", "<leader>bg", "<cmd>DapToggleBreakpoint<cr>", {})
 map("n", "<leader>bc", "<cmd>DapContinue<cr>", {})
 map("n", "<leader>be", '<Cmd>lua require("dapui").eval(nil, {enter=true})<CR>', {})
-
---hop 快速查找工具
-
-nvim_set_keymap("n", "s", ":HopWord<cr>", { silent = true }) --直接高亮
-nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true }) --需要手动输入关键字, 3次按键必能找到
