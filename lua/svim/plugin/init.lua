@@ -15,4 +15,3 @@ require("svim.plugin.vim-translator") -- 翻译功能
 require("svim.plugin.dap") -- debuger
 require("svim.plugin.luaSnip") -- 代码片段
 require("svim.plugin.null-ls") -- 代码检查，和格式化, 支持自定义注入source
-require("svim.plugin.leap") -- 快速跳转

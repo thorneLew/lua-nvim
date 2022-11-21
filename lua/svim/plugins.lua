@@ -92,8 +92,16 @@ return require("packer").startup(function(use)
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "sindrets/diffview.nvim" })
 
-	-- sneap 快速跳转
-	use("ggandor/leap.nvim")
+	-- 类似easymotion 快查找 vim插件-- 使用 leap替换
+	use({
+		"phaazon/hop.nvim",
+		event = "BufRead",
+		config = function()
+			require("hop").setup({})
+			vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", { silent = true })
+			vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
+		end,
+	})
 
 	-- 轻松修改括号，引号等成对符号
 	use("tpope/vim-surround")
