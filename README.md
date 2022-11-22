@@ -263,3 +263,4 @@ use("ggandor/leap.nvim")
 1.  nvim-telescope/telescope-fzf-native.nvim 在 M1 需要编译 arch -x86_64 make
 2.  null-ls 需要 neovim - v0.8.0-1210-gd367ed9b2
 3.  sindrets/diffview.nvim -- 需要 git 版本 2.31.0 以上，我的版本 2.33.0
+4.  Mac M1 debuger go 时不生效，go verison 是 arm64 不是 amd64
