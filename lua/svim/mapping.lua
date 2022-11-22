@@ -72,4 +72,5 @@ map("v", "<leader>t", ":TranslateW<cr>", {})
 --nvim-dap 断点工具
 map("n", "<leader>bg", "<cmd>DapToggleBreakpoint<cr>", {})
 map("n", "<leader>bc", "<cmd>DapContinue<cr>", {})
-map("n", "<leader>be", '<Cmd>lua require("dapui").eval(nil, {enter=true})<CR>', {})
+map("n", "<leader>be", "<Cmd>lua DapFloatEval()<CR>", {})
+map("n", "<leader>bs", "<Cmd>lua DapFloatScopes()<CR>", {})

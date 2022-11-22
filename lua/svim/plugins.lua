@@ -132,14 +132,12 @@ return require("packer").startup(function(use)
 	use("mg979/vim-visual-multi")
 
 	-- 快速选中块
-	use({
-		"gcmt/wildfire.vim",
-	})
+	use("gcmt/wildfire.vim")
 
 	-- 剪切板快速展示
 	use("junegunn/vim-peekaboo")
 
-	-- yank put 修改
+	-- 使用 <c-n> 快速跳转选中的变量
 	use({
 		"gbprod/yanky.nvim",
 		config = function()
@@ -149,6 +147,7 @@ return require("packer").startup(function(use)
 
 	--翻译插件
 	use("voldikss/vim-translator")
+
 	-- debuger
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
