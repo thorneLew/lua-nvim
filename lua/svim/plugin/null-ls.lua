@@ -44,6 +44,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.prettier,
+		formatting.eslint,
 		formatting.fixjson,
 		formatting.gofumpt,
 		formatting.goimports,
