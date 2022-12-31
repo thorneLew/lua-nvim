@@ -4,7 +4,9 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- 主题 东京之夜
-	use("folke/tokyonight.nvim")
+	-- use("folke/tokyonight.nvim")
+	-- 主题 cobalt2
+	use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
 	--根据16进制高亮颜色
 	use("norcalli/nvim-colorizer.lua")
 
