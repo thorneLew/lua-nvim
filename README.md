@@ -258,6 +258,13 @@ use("ggandor/leap.nvim")
 
 ```
 
+### 输出日志
+
+```lua
+vim.notify(filetype, vim.log.levels.WARN, { title = "null-ls" })
+
+```
+
 ### 常见问题
 
 1.  nvim-telescope/telescope-fzf-native.nvim 在 M1 需要编译 arch -x86_64 make
