@@ -49,7 +49,7 @@ null_ls.setup({
 		formatting.gofumpt,
 		formatting.goimports,
 		formatting.clang_format,
-		diagnostics.eslint,
+		-- diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},
 	on_attach = on_attach,
