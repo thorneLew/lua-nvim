@@ -23,7 +23,7 @@ local on_attach = function(client, bufnr)
 	if filetype == "handlebars" then
 		return
 	end
-
+	-- vim.notify(filetype, vim.log.levels.INFO)
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
