@@ -3,6 +3,9 @@
 
 -- require("colorbuddy").colorscheme("cobalt2")
 
+-- gruvbox-baby
+-- vim.cmd([[colorscheme gruvbox-baby]])
+
 -- luochen1990/rainbow -- 彩虹括号
 vim.g.rainbow_active = 1
 

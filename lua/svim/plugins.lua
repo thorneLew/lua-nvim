@@ -9,6 +9,8 @@ return require("packer").startup(function(use)
 	-- use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
 	-- 主题vscode
 	use("Mofiqul/vscode.nvim")
+	-- 主题gruvbox-baby
+	-- use({ "luisiacc/gruvbox-baby", branch = "main" })
 	--根据16进制高亮颜色
 	use("norcalli/nvim-colorizer.lua")
 
