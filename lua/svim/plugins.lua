@@ -6,7 +6,9 @@ return require("packer").startup(function(use)
 	-- 主题 东京之夜
 	-- use("folke/tokyonight.nvim")
 	-- 主题 cobalt2
-	use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
+	-- use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
+	-- 主题vscode
+	use("Mofiqul/vscode.nvim")
 	--根据16进制高亮颜色
 	use("norcalli/nvim-colorizer.lua")
 
@@ -128,6 +130,8 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
+	-- 彩虹色括号
+	use("luochen1990/rainbow")
 
 	-- 快速选中 类似 vscode 的 c-d
 	-- https://github.com/mg979/vim-visual-multi/wiki/Quick-start
