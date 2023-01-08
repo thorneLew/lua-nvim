@@ -265,6 +265,26 @@ vim.notify(filetype, vim.log.levels.WARN, { title = "null-ls" })
 
 ```
 
+### lsp
+
+> :LspInfo 查看详情
+
+1. eslint-lsp 提供 eslint 格式化提示
+2.
+
+### null-ls
+
+> 格式化及错误提示等 :NullLsInfo
+
+1. prettier
+2. lua
+3. go
+4. python
+
+### Mason
+
+> 管理 formating lsp 等等工具 :Mason
+
 ### 常见问题
 
 1.  nvim-telescope/telescope-fzf-native.nvim 在 M1 需要编译 arch -x86_64 make (kitty 中，在 xxxxfzf-native.nvim 重新执行了 make clean && make 搞定)

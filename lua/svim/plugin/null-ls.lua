@@ -19,10 +19,10 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- add to your shared on_attach callback
 local on_attach = function(client, bufnr)
-	local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
-	if filetype == "handlebars" then
-		return
-	end
+	-- local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+	-- if filetype == "handlebars" then
+	-- 	return
+	-- end
 	-- vim.notify(filetype, vim.log.levels.INFO)
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -44,12 +44,12 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.prettier,
-		formatting.eslint,
+		-- formatting.eslint,
+		formatting.nginx_beautifier,
 		formatting.fixjson,
 		formatting.gofumpt,
 		formatting.goimports,
 		formatting.clang_format,
-		-- diagnostics.eslint,
 		diagnostics.golangci_lint,
 	},
 	on_attach = on_attach,
