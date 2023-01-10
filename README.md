@@ -270,7 +270,7 @@ vim.notify(filetype, vim.log.levels.WARN, { title = "null-ls" })
 > :LspInfo 查看详情
 
 1. eslint-lsp 提供 eslint 格式化提示
-2.
+2. solidtiy --- > Mason install solidity-ls ; npm i -g solidity-language-server
 
 ### null-ls
 
