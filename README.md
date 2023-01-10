@@ -280,6 +280,7 @@ vim.notify(filetype, vim.log.levels.WARN, { title = "null-ls" })
 2. lua
 3. go
 4. python
+5. solidity --- 使用 prettier 格式化，需要全局安装插件; npm i -g prettier-plugin-solidity
 
 ### Mason
 
