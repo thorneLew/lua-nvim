@@ -14,7 +14,6 @@ local servers = {
 	"cssls",
 	"eslint",
 	"solidity",
-	"solidity_ls",
 }
 
 for _, lsp in ipairs(servers) do
