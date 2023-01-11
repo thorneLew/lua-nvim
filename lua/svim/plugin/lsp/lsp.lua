@@ -5,6 +5,7 @@ local lspconfig = require("lspconfig")
 
 -- -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { "sumneko_lua", "clangd", "gopls", "pyright", "html", "tsserver", "cssls", "eslint", "solidity_ls" }
+
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		-- on_attach = my_custom_on_attach,
@@ -76,7 +77,6 @@ require("mason-lspconfig").setup({
 		"html",
 		"pyright",
 		"gopls",
-		-- "solidity_ls" 手动安装 MasonInstall solidity_ls,
 		-- lint
 		"eslint",
 	},
